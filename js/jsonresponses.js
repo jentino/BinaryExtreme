@@ -10,9 +10,9 @@ onMessage = function(msg) {
 			else if (js.msg_type == 'authorize') {
 				document.getElementById("statusblock").innerHTML = "Online".bold().fontcolor("#59E817");
 				connectLock = "Switch";
-				//playSoundCustom(14);
+				playSoundCustom(14);
 				var get = parseGetVars();   
-				//writeToScreen( "Connected. " );         
+				writeToScreen( "Connected. " );         
 				//writeToScreen(js.authorize.email + "---------------");
 				if(OriginalBalanceLock == "Off"){
 					OriginalBalance = js.authorize.balance;

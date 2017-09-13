@@ -25,30 +25,44 @@ function checkWinOrLoss(buyprice,amount){
 	return str_return;
 }
 
-function tradeOption(direction, currentMinutes) {
+function tradeTickData() {
+
+	mypb(totalwins);
+
+	tickCycleSearch = Intervals.indexOf(tickCycle);
 	
-	if(temp_minute != currentMinutes) {
-		if(direction == "RED") {
-			if(signalCandle == "UP")
+	//document.querySelector('#timer2 .field2').innerHTML = tickCounter%5;
+	//document.querySelector('#showtradeLock').innerHTML = tickCycle + " " + tickCycleSearch;
+
+	if(tockSeconds === 0) {
+		tickCycle++;
+		tickCycle = tickCycle%60;
+
+		if(tickCycleSearch === -1 && tickLock === "Open") {
+			
+			tickLock = "Closed";
+
+			if(tickTradeSwitch === 0) {
 				Buyit(tradeamount[rescue]);
-			else if(signalCandle == "DOWN")
-				Sellit(tradeamount[rescue]);
-		}	
-    	else if (direction=="GREEN") {
-    		if(signalCandle == "UP")
-				Sellit(tradeamount[rescue]);
-			else if(signalCandle == "DOWN")
-				Buyit(tradeamount[rescue]);
+				tickTradeSwitch = 1;
+			} else if(tickTradeSwitch === 1) {
+			 	Sellit(tradeamount[rescue]);
+				tickTradeSwitch = 0;
+			}
+			playSoundCustom(3);		    
 		}
-    	//document.getElementById("currentMinutes").innerHTML = currentMinutes;
-    	//document.getElementById("tradeaction").innerHTML = direction;
-    	showRescueAmount();
-    	temp_minute = currentMinutes;
-    	
+	} 
+	else if(tockSeconds === 4 && tickCycleSearch !== -1 && tickLock === "Closed") {
+			tickLock = "Locked";
+			GetPortfolio();
+			playSoundCustom(18);
+			
 	}
-	else
-		return 0;
-		
-	PingBinServer();
-    
-} 
+	else if(tockSeconds === 3 && tickCycleSearch === -1 && tickLock === "Locked") {
+		tickLock = "Open";
+		GetProfitTable();
+		playSoundCustom(21);
+	}
+	
+	tickCounter++;
+}

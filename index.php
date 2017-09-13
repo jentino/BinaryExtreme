@@ -123,7 +123,7 @@ $user->getUserData();
 
                
 
-                <img src="img/tinylock.png"><b id="showtradeLock"></b>&nbsp;
+                <!-- <img src="img/tinylock.png"><b id="showtradeLock"></b>&nbsp; -->
                    <b id="showTheTime">00:00</b>
                     <a href="#" id="btnconnect" onclick="Connect('<?php echo $user->token_id_live;?>', '<?php echo $user->app_id_live;?>'); return false"><button type="button" class="btn btn-default btn-xs extrasmall" >Connect</button></a> 
                     <a href="http://127.0.0.1/logout.php" id="btnlogout"><button type="button" class="btn btn-default btn-xs extrasmall" >Logout</button></a> 

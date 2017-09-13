@@ -1,12 +1,12 @@
 function Connect(token, appid) {
-    
+            
             output = document.getElementById("debug");
             //document.getElementById("debug").innerHTML = "Connecting ... " ;
             
             appid_temp = appid;
 
-				document.querySelector('#showtradeLock').innerHTML = appid_temp;
-            //playSoundCustom(16);
+			//document.querySelector('#showtradeLock').innerHTML = appid_temp;
+            playSoundCustom(16);
             
             if (token == '') {
                 writeToScreen("Invalid API Token");

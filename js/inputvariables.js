@@ -15,6 +15,11 @@ var tradeamount = [0.35,0.74,1.58,3.35,7.12,15.12];
 var Intervals = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59];
 //var Intervals = [2,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59];
 
+var tickCounter = 1;
+var tickTradeSwitch = 0;
+var tickCycle = 0;
+var tickCycleSearch = 0;
+var tickLock = "Open";
 
 var tradeProfit = 0;
 var maxProfit = 0;
