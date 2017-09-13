@@ -49,5 +49,4 @@ var outputemail;
 var assetvalue = "R_100";
 var OriginalBalance = 0;
 var OriginalBalanceMain = 0;
-var trader_name = "";
 
