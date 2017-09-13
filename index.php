@@ -221,16 +221,22 @@ $user->getUserData();
                                 <div class="row padup" >
 
                                 <div class="col-xs-3 col-xs-4-main-profiledash-under-1">
-                                    <h6><small>PROFIT <br><b>$</b><b id="profitupdate">0</b></small></h6>
+                                    <h6><small>PROFIT  1 <br><b>$</b><b id="profitupdate">0</b></small></h6>
                                 </div>
-                                
+
                                 <div class="col-xs-3 col-xs-4-main-profiledash-under-1">
-                                    <h6><small >ORIGINAL BALANCE <br><b>$</b><b id="originalbalance">0</b></small></h6>
-                                </div>
-                                
-                                <div class="col-xs-3 col-xs-4-main-profiledash-under-1">
-                                    <h6><small>RESCUE AMOUNT <br><b>$</b><b id="showrescueamount">0</b></small></h6>
+                                    <h6><small>PROFIT  2<br><b>$</b><b id="showprofit2update">0</b></small></h6>
                                 </div> 
+                                
+                                <div class="col-xs-3 col-xs-4-main-profiledash-under-1">
+                                    <h6><small >ORIGINAL BAL.<br><b>$</b><b id="originalbalance">0</b></small></h6>
+                                </div>
+                                
+                                <div class="col-xs-3 col-xs-4-main-profiledash-under-1">
+                                    <h6><small>RESCUE<br><b>$</b><b id="showrescueamount">0</b></small></h6>
+                                </div> 
+
+                                
                             </div>
                             
 
