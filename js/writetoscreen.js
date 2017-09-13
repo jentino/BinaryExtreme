@@ -45,7 +45,7 @@ function writeWinLossToScreen() {
 	document.getElementById("profitupdate").innerHTML = (tradeProfit - tradeLoss).toFixed(2); 
 	
 	if(winlossresult == -2 && connectLock == "Off" && appid_temp == appidlive) {
-		//writeToScreen("YOU HAVE LOST THIS ROUND. CLAIM YOUR REFUND.");
+		
 		winlossLock = "On";
 		connectLock = "DEMO";
 		reConnect(tokeniddemo, appiddemo);
@@ -57,4 +57,6 @@ function writeWinLossToScreen() {
 		reConnect(tokenidlive,appidlive);
 	}
 }
+
+//writeToSmallScreen("YOU HAVE LOST THIS ROUND. CLAIM YOUR REFUND.");
 
