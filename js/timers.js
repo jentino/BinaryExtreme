@@ -27,7 +27,3 @@ function startTockClock() {
     else
         setTimeout(startTockClock, 1000);
 }
-
-
-
-

@@ -58,11 +58,6 @@ onMessage = function(msg) {
 
 		writeBalanceToDash(js.transaction.balance);
 	}
-
-	else if (js.msg_type == 'tick') {
-		
-		//tradeTickData();
-	}
 	else if (js.msg_type == 'time') {
 		
 		writeTimeToScreen(js.time);

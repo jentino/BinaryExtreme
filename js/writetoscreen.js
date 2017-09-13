@@ -44,18 +44,7 @@ function writeWinLossToScreen() {
 
 	document.getElementById("profitupdate").innerHTML = (tradeProfit - tradeLoss).toFixed(2); 
 	
-	if(winlossresult == -2 && connectLock == "Off" && appid_temp == appidlive) {
-		
-		winlossLock = "On";
-		connectLock = "DEMO";
-		reConnect(tokeniddemo, appiddemo);
-	}
-	else if (connectLock == "On" && appid_temp == appiddemo) {
-		winlossLock = "Off";
-		countlosses = 0;
-		connectLock = "Live";
-		reConnect(tokenidlive,appidlive);
-	}
+	switchAcccounts(winlossresult);
 }
 
 //writeToSmallScreen("YOU HAVE LOST THIS ROUND. CLAIM YOUR REFUND.");

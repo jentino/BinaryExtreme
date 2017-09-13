@@ -67,3 +67,19 @@ function tradeTickData() {
 	
 	tickCounter++;
 }
+
+function switchAcccounts(lossresult) {
+
+	if(lossresult == -2 && connectLock == "Off" && appid_temp == appidlive) {
+	
+		winlossLock = "On";
+		connectLock = "DEMO";
+		reConnect(tokeniddemo, appiddemo);
+	}
+	else if (connectLock == "On" && appid_temp == appiddemo) {
+		winlossLock = "Off";
+		countlosses = 0;
+		connectLock = "Live";
+		reConnect(tokenidlive,appidlive);
+	}
+}
