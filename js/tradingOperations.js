@@ -32,7 +32,6 @@ function tradeTickData() {
 
 	tickCycleSearch = Intervals.indexOf(tickCycle);
 	
-	//document.querySelector('#timer2 .field2').innerHTML = tickCounter%5;
 	//document.querySelector('#showtradeLock').innerHTML = tickCycle + " " + tickCycleSearch;
 
 	if(tockSeconds === 0) {
