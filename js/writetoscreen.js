@@ -15,9 +15,10 @@ function writeTimeToScreen(thetime) {
 	
 	if(setTimerOnce == 1) {
 		startTockClock();
-		setTimerOnce = 10000;
+		setTimerOnce = 50000;
 	}
-	document.getElementById("showTheTime").innerHTML = d.getHours() +  ":" + d.getMinutes();
+
+	document.getElementById("showTheTime").innerHTML = returnFullTime(thetime);
 
 }	
 

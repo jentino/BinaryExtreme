@@ -2,6 +2,7 @@ function checkWinOrLoss(buyprice,amount){
 	var str_return;
 	
 	if (amount > 0) {
+		
 		connectLock = "On";
 		if(winlossLock == "Off"){
 			tradeProfit = tradeProfit + parseFloat(buyprice)*0.89;
