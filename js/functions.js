@@ -18,7 +18,8 @@ function returnFullTime(thetime) {
 	
 	var xd = new Date(0); // The 0 there is the key, which sets the date to the epoch
 	xd.setUTCSeconds(thetime);
-	return  xd.getHours() + ":" + xd.getMinutes() + ":" + xd.getSeconds();
+	var time=('0'  + xd.getHours()).slice(-2)+':'+('0' + xd.getMinutes()).slice(-2);
+	return  time;
 }
 
 function mypb(wins){

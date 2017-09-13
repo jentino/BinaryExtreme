@@ -13,7 +13,7 @@ onMessage = function(msg) {
 		connectLock = "Switch";
 		playSoundCustom(14);
 		var get = parseGetVars();   
-		writeToScreen( "Connected. " );         
+		writeToSmallScreen( "> Connected. " );         
 		//writeToScreen(js.authorize.email + "---------------");
 		if(OriginalBalanceLock == "Off"){
 

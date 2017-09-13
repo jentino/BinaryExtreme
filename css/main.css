@@ -28,7 +28,7 @@
 		padding-left: 114px;
 	} 
 	
-	#mainConsole
+#mainConsole
 {
     border-radius: 5px;
 	width: auto;
@@ -46,16 +46,17 @@
 	width: auto;
     height:70px;
     background-color:LightGray;
-    overflow-y: auto;
+    overflow-y: hidden;
     /* max-width:280px; */
     max-height:70px;
     margin-top: 33px;
 }
-
-
- 
- 
 .debug {
+	font-size: 12px;
+	font-family: myFont;
+}
+
+.debug1 {
 	font-size: 12px;
 	font-family: myFont;
 }

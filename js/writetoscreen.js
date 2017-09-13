@@ -5,6 +5,14 @@ function writeToScreen(message) {
 	output.appendChild(div);    
 	div.scrollIntoView(); 	       
 }
+
+function writeToSmallScreen(message) {
+	var div = document.createElement("p");
+	div.style.wordWrap = "break-word";
+	div.innerHTML = message;    
+	output2.appendChild(div);    
+	div.scrollIntoView(); 	       
+}
 	
 function writeTimeToScreen(thetime) {
 	
@@ -14,7 +22,9 @@ function writeTimeToScreen(thetime) {
 	globalMinutes = d.getMinutes();
 	
 	if(setTimerOnce == 1) {
+
 		startTockClock();
+		writeToSmallScreen( "> Program ready. Do not close this window. " ); 
 		setTimerOnce = 50000;
 	}
 

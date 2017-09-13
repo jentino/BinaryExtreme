@@ -146,7 +146,7 @@ $user->getUserData();
                   <div class="col-xs-6">
                       <div class="well">
                             <div id="mainConsole">
-							    <div class="innerConsole debug" id="debug" onscroll="myStopFunction()"></div>
+							    <div class="innerConsole debug" id="tradescreen" onscroll="myStopFunction()"></div>
 						    </div>
                       </div>
                   </div>
@@ -239,7 +239,7 @@ $user->getUserData();
                                 <div>
                                     
                                         <div id="miniConsole">
-                                            <div class="innerConsole" id="debug" onscroll="myStopFunction()"></div>
+                                            <div class="innerConsole debug1" id="infoscreen" onscroll="myStopFunction()"></div>
                                         </div>
                                     
                                 </div>

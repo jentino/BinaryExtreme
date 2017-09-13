@@ -1,7 +1,9 @@
 function Connect(token, appid) {
             
-            output = document.getElementById("debug");
-            //document.getElementById("debug").innerHTML = "Connecting ... " ;
+            output = document.getElementById("tradescreen");
+            output2 = document.getElementById("infoscreen");
+
+            
             
             appid_temp = appid;
 
@@ -9,7 +11,7 @@ function Connect(token, appid) {
             playSoundCustom(16);
             
             if (token == '') {
-                writeToScreen("Invalid API Token");
+                writeToSmallScreen("Invalid API Token");
                 return;
             } 
                 
