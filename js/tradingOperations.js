@@ -101,38 +101,38 @@ function switchAcccounts(lossresult) {
 		}
 
 	}
-	else if(lossresult == -4) {
+	// else if(lossresult == -4) {
 		
-		if(appid_temp == appidlive){
-			// winlossLock = "On";
-			// connectLock = "DEMO";
-			reConnect(tokeniddemo, appiddemo);
-		}
+	// 	if(appid_temp == appidlive){
+	// 		// winlossLock = "On";
+	// 		// connectLock = "DEMO";
+	// 		reConnect(tokeniddemo, appiddemo);
+	// 	}
 			
-		else if (appid_temp == appiddemo){
+	// 	else if (appid_temp == appiddemo){
 
-			// winlossLock = "Off";
-			// connectLock = "Live";
-			//countlosses = 0;
-			reConnect(tokenidlive,appidlive);
-		}	
+	// 		// winlossLock = "Off";
+	// 		// connectLock = "Live";
+	// 		//countlosses = 0;
+	// 		reConnect(tokenidlive,appidlive);
+	// 	}	
 	
-	}
-	else if(lossresult == -6) {
+	// }
+	// else if(lossresult == -6) {
 		
-		if(appid_temp == appidlive){
-			// winlossLock = "On";
-			// connectLock = "DEMO";
-			reConnect(tokeniddemo, appiddemo);
-		}
+	// 	if(appid_temp == appidlive){
+	// 		// winlossLock = "On";
+	// 		// connectLock = "DEMO";
+	// 		reConnect(tokeniddemo, appiddemo);
+	// 	}
 			
-		else if (appid_temp == appiddemo){
+	// 	else if (appid_temp == appiddemo){
 
-			// winlossLock = "Off";
-			// connectLock = "Live";
-			//countlosses = 0;
-			reConnect(tokenidlive,appidlive);
-		}	
+	// 		// winlossLock = "Off";
+	// 		// connectLock = "Live";
+	// 		//countlosses = 0;
+	// 		reConnect(tokenidlive,appidlive);
+	// 	}	
 	
-	}
+	// }
 }
