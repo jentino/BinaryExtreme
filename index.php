@@ -67,7 +67,11 @@ $user->getUserData();
 	<script type="text/javascript" src="js/tradingOperations.js"></script>
 	<script type="text/javascript" src="js/tock.js"></script>
     <script type="text/javascript" src="js/reconnect.js"></script>
-    
+    <script>
+        if(/chrom(e|ium)/.test(navigator.userAgent.toLowerCase())){
+            $('#Msg').hide();
+        }
+    </script>
 
   </head>
  
@@ -90,6 +94,7 @@ $user->getUserData();
 <audio id="audio21" src="sounds/woncoin.wav" autostart="false" ></audio>
 <audio id="audio22" src="sounds/lost1.wav" autostart="false" ></audio>
 <audio id="audio23" src="sounds/lost2.wav" autostart="false" ></audio>
+<audio id="audio24" src="sounds/success.wav" autostart="false" ></audio>
 	
 <p><br>
 <!----------------------------------------------------------------------HEADER-------------------------------------->

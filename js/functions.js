@@ -24,13 +24,18 @@ function returnFullTime(thetime) {
 
 function mypb(wins){
 	$(function() {
+		
 		var current_progress = 0;
-			current_progress = (wins/33 * 100).toFixed();
+			current_progress = (maxProfit/10 * 100).toFixed();
 			$("#dynamic")
 			.css("width", current_progress + "%")
 			.attr("aria-valuenow", current_progress)
 			.text(current_progress + "% Profit");
-			if (current_progress >= 100)
-				current_progress = 0;
+			if (current_progress >= 100){
+				timer2.stop();
+				writeToSmallScreen("CONGRATULATIONS! YOU MADE YOUR TARGET.");
+				playSoundCustom(24);
+			}
+				
 	  });
 }

@@ -1,7 +1,7 @@
 function reConnect(token,appid) {
 		
 		outputemail = document.getElementById("welcomeuser");
-		//playSoundCustom(16);
+		playSoundCustom(24);
 
         if (token == '') {
             writeToScreen("Invalid API Token");

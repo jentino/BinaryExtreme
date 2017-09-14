@@ -1,31 +1,3 @@
-function checkWinOrLoss(buyprice,amount){
-	var str_return;
-	
-	if (amount > 0) {
-		
-		connectLock = "On";
-		if(winlossLock == "Off"){
-			tradeProfit = tradeProfit + parseFloat(buyprice)*0.89;
-			totalwins++;
-			countlosses = 0;
-			rescue = 0;
-		}
-		
-		str_return = "Win".bold().fontcolor("Green");
-	}
-	else {
-		connectLock = "Off";
-
-		if(winlossLock == "Off"){
-			tradeLoss = tradeLoss + parseFloat(buyprice);
-			countlosses++;
-			rescue++;
-		}
-		str_return = "Loss".bold().fontcolor("Red");
-	}
-	return str_return;
-}
-
 function tradeTickData() {
 
 	mypb(totalwins);
@@ -42,13 +14,26 @@ function tradeTickData() {
 			
 			tickLock = "Closed";
 
-			if(tickTradeSwitch === 0) {
-				Buyit(tradeamount[rescue]);
-				tickTradeSwitch = 1;
-			} else if(tickTradeSwitch === 1) {
-			 	Sellit(tradeamount[rescue]);
-				tickTradeSwitch = 0;
+			if(appid_temp == appidlive){
+				if(tickTradeSwitch === 0) {
+					Buyit(tradeamount[rescue]);
+					tickTradeSwitch = 1;	
+				} else if(tickTradeSwitch === 1) {
+					Sellit(tradeamount[rescue]);
+					tickTradeSwitch = 0;
+				}
 			}
+			else if(appid_temp == appiddemo){
+				if(tickTradeSwitch === 0) {
+					Sellit(tradeamount[rescue]);
+					tickTradeSwitch = 1;	
+				} else if(tickTradeSwitch === 1) {
+					Buyit(tradeamount[rescue]);
+					tickTradeSwitch = 0;
+				}
+			}
+
+			
 			playSoundCustom(3);		    
 		}
 	} 
@@ -67,18 +52,87 @@ function tradeTickData() {
 	tickCounter++;
 }
 
+function checkWinOrLoss(buyprice,amount){
+	var str_return;
+	
+	if (amount > 0) {
+		
+		// connectLock = "On";
+		// if(winlossLock == "Off"){
+			tradeProfit = tradeProfit + parseFloat(buyprice)*0.89;
+			totalwins++;
+			countlosses = 0;
+			rescue = 0;
+		// }
+		
+		str_return = "Win".bold().fontcolor("Green");
+	}
+	else {
+		// connectLock = "Off";
+
+		// if(winlossLock == "Off"){
+			tradeLoss = tradeLoss + parseFloat(buyprice);
+			countlosses++;
+			rescue++;
+		// }
+
+		str_return = "Loss".bold().fontcolor("Red");
+	}
+	return str_return;
+}
+
+
 function switchAcccounts(lossresult) {
 
-	if(lossresult == -2 && connectLock == "Off" && appid_temp == appidlive) {
+	if(lossresult == -2) {
 	
-		winlossLock = "On";
-		connectLock = "DEMO";
-		reConnect(tokeniddemo, appiddemo);
+		if(appid_temp == appidlive){
+			// winlossLock = "On";
+			// connectLock = "DEMO";
+			reConnect(tokeniddemo, appiddemo);
+		}
+			
+		else if (appid_temp == appiddemo){
+
+			// winlossLock = "Off";
+			// connectLock = "Live";
+			//countlosses = 0;
+			reConnect(tokenidlive,appidlive);
+		}
+
 	}
-	else if (connectLock == "On" && appid_temp == appiddemo) {
-		winlossLock = "Off";
-		countlosses = 0;
-		connectLock = "Live";
-		reConnect(tokenidlive,appidlive);
+	else if(lossresult == -4) {
+		
+		if(appid_temp == appidlive){
+			// winlossLock = "On";
+			// connectLock = "DEMO";
+			reConnect(tokeniddemo, appiddemo);
+		}
+			
+		else if (appid_temp == appiddemo){
+
+			// winlossLock = "Off";
+			// connectLock = "Live";
+			//countlosses = 0;
+			reConnect(tokenidlive,appidlive);
+		}	
+	
+	}
+	else if(lossresult == -6) {
+		
+		if(appid_temp == appidlive){
+			// winlossLock = "On";
+			// connectLock = "DEMO";
+			reConnect(tokeniddemo, appiddemo);
+		}
+			
+		else if (appid_temp == appiddemo){
+
+			// winlossLock = "Off";
+			// connectLock = "Live";
+			//countlosses = 0;
+			reConnect(tokenidlive,appidlive);
+		}	
+	
 	}
 }

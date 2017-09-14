@@ -28,7 +28,8 @@ function writeTimeToScreen(thetime) {
 		setTimerOnce = 50000;
 	}
 
-	document.getElementById("showTheTime").innerHTML = returnFullTime(thetime);
+	//document.getElementById("showTheTime").innerHTML = returnFullTime(thetime);
+	document.getElementById("showTheTime").innerHTML = appid_temp;
 
 }	
 
@@ -39,10 +40,12 @@ function writeBalanceToDash(updatedbalanceamount) {
 function writeWinLossToScreen() {	
 
 	var winlossresult = countwins - countlosses;
+
+	maxProfit = (tradeProfit - tradeLoss).toFixed(2);
 	
 	document.getElementById("winlossDash").innerHTML = totalwins + " / " + winlossresult;
 
-	document.getElementById("profitupdate").innerHTML = (tradeProfit - tradeLoss).toFixed(2); 
+	document.getElementById("profitupdate").innerHTML = maxProfit;
 	
 	switchAcccounts(winlossresult);
 }
